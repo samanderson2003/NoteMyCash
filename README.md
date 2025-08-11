@@ -1,4 +1,4 @@
-# 📒 Finote  
+# 📒 Finote - Finance Note
 *Talk it. Track it. Done.*  
 
 ---
