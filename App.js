@@ -432,12 +432,12 @@ const SwipeableNoteItem = ({ item, noteCount, indexInReversedList, onEdit, onDel
     <View style={styles.swipeContainer}>
       <Animated.View style={[ styles.actionContainer, styles.editAction, { opacity: swipeDirection === 'right' ? actionOpacity : 0, transform: [{ translateX: translateX.interpolate({ inputRange: [-ACTION_WIDTH, 0, ACTION_WIDTH], outputRange: [-ACTION_WIDTH, -ACTION_WIDTH, 0], extrapolate: 'clamp' }) }] } ]}>
         <TouchableOpacity style={styles.actionButton} onPress={handleEdit} activeOpacity={0.8}>
-          <Text style={styles.actionIcon}>✏️</Text><Text style={styles.actionText}>Edit</Text>
+          <Image source={require('/Users/samandersony/StudioProjects/projects/LigthsNotes/assets/feedback_768932.png')} style={styles.actionIconImage} />
         </TouchableOpacity>
       </Animated.View>
       <Animated.View style={[ styles.actionContainer, styles.deleteAction, { opacity: swipeDirection === 'left' ? actionOpacity : 0, transform: [{ translateX: translateX.interpolate({ inputRange: [-ACTION_WIDTH, 0, ACTION_WIDTH], outputRange: [0, ACTION_WIDTH, ACTION_WIDTH], extrapolate: 'clamp' }) }] } ]}>
         <TouchableOpacity style={styles.actionButton} onPress={handleDelete} activeOpacity={0.8}>
-          <Text style={styles.actionIcon}>🗑️</Text><Text style={styles.actionText}>Delete</Text>
+          <Image source={require('/Users/samandersony/StudioProjects/projects/LigthsNotes/assets/delete_3221897.png')} style={styles.actionIconImage} />
         </TouchableOpacity>
       </Animated.View>
       <Animated.View style={[ styles.noteCard, { opacity: 1 - (indexInReversedList * 0.02), transform: [{ translateX }] } ]} {...panResponder.panHandlers}>
@@ -501,8 +501,7 @@ const styles = StyleSheet.create({
   editAction: { left: 0, backgroundColor: "#10b981" },
   deleteAction: { right: 0, backgroundColor: "#ef4444" },
   actionButton: { alignItems: "center", justifyContent: "center", padding: 12, borderRadius: 12, minHeight: 60, width: 60 },
-  actionIcon: { fontSize: 20, marginBottom: 2 },
-  actionText: { color: "#ffffff", fontSize: 10, fontWeight: "700", textTransform: "uppercase", letterSpacing: 0.5 },
+  actionIconImage: { width: 30, height: 30, tintColor: '#fff', resizeMode: 'contain' },
   noteCard: { backgroundColor: "#ffffff", borderRadius: 16, padding: 20, shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 8, elevation: 4, borderLeftWidth: 4, borderLeftColor: "#3b82f6" },
   noteHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 12 },
   timeContainer: { backgroundColor: "#f8fafc", paddingHorizontal: 12, paddingVertical: 6, borderRadius: 12 },
